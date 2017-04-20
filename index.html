@@ -67,6 +67,75 @@
         chart.draw(data, {allowHtml:true});
       }
    </script>
+   
+   <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+   
+   
+   <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+   
+   
+   
+     <script>
+        $(document).ready(function () {
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+                        window.location.hash = hash;
+                    });
+                } 
+            });
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+    
     <style>
          .google-visualization-orgchart-linebottom{
            border-bottom: 2px solid black!important;
@@ -288,6 +357,204 @@
                 font:14px Helvetica,Arial,sans-serif; 
                 width:100%;
         } 
+        
+        
+        
+        
+        * {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+        
+        
+        
+        button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+        
+        
+        #myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
     </style>
 </head>
 
@@ -317,11 +584,48 @@
                <!-- vision escuela hipica-->
                 <!-- https://us15.admin.mailchimp.com/lists/integration/embeddedcode?id=84597 -->
                 <!-- Begin MailChimp Signup Form -->
+                
+                
+                 <h2>Titulo</h2>
+<p>Cambio de imagen cada 2 segundos</p>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img_nature_wide.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img_fjords_wide.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img_mountains_wide.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>  
+                
+                
+                
+                
 <label for="mce-EMAIL" class="control-label">Suscríbete a nuestro boletín de noticias</label>
 <div id="mc_embed_signup">
 <form action="//esy.us15.list-manage.com/subscribe/post?u=909e3beaf5265df3a421e62a1&amp;id=96c9ffb844" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll" class="input-group" >
-	<input class="form-control" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Correo electrónico" required>
+	<input class="email form-control" type="email" value="email" name="EMAIL" id="mce-EMAIL" placeholder="Correo electrónico" required>
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_909e3beaf5265df3a421e62a1_96c9ffb844" tabindex="-1" value=""></div>
     <div class="clear input-group-btn"><input class="button btn btn-danger" type="submit" value="Suscríbete" name="subscribe" id="mc-embedded-subscribe"></div>
     </div>
@@ -331,7 +635,10 @@
 <!--End mc_embed_signup-->
                
                
-               
+    
+   
+                                             
+                                     
 
     </div>
     <!-- Sección quienes somos -->
@@ -391,7 +698,27 @@
             </div>
         </div>
     </div>
-    <!-- Container (Services Section) -->
+    
+    
+    <h2>Accordion with symbols</h2>
+<p>In this example we have added a "plus" sign to each button. When the user clicks on the button, the "plus" sign is replaced with a "minus" sign.</p>
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+   
+   
+    <!-- Sección servicios -->
     <div id="servicios" class="container-fluid text-center">
         <h2>SERVICIOS</h2>
         <h4>Nuestras actividades</h4>
@@ -449,6 +776,20 @@ Disponemos de una persona que se encargara del cuidado de cada caballo y además
         </div>
         <br>
     </div>
+    
+    <h2>Image Modal</h2>
+<p>In this example, we use CSS to create a modal (dialog box) that is hidden by default.</p>
+<p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+
+<img id="myImg" src="img_fjords.jpg" alt="Trolltunga, Norway" width="300" height="200">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+   
     <!-- Sección instalaciones -->
     <div id="instalaciones" class="container-fluid text-center bg-grey">
         <h2>Instalaciones</h2>
@@ -569,16 +910,13 @@ Para los paseos tendrán que pedir cita.</h4> </div>
                     <div class="panel-heading">
                         <h1>Adultos</h1> </div>
                     <div class="panel-body">
-                        <p><strong>35€/sesión</strong> Iniciación</p>
+                        <p><strong>35€/sesión</strong> Iniciación a hipoterapia</p>
                         <p><strong>40€/sesión</strong> Doma clásica</p>
-                        <p><strong>40€/sesión</strong> Hipoterapia y equitación adaptada</p>
-                        <p><strong>20€ al mes</strong> Escolares</p>
-                        <p><strong>45€/sesión</strong>Paseos</p>             
-                        <p><strong>500€ al mes</strong>Pupilaje</p>
+                        <p><strong>40€/sesión</strong> Hipoterapia y equitación adaptada</p>       
                     </div>
                     <div class="panel-footer">
                         <h3>Tiempo aproximado por sesión</h3>
-                        <h4>1 hora (para los paseos es entre 1 a 5 horas)</h4>
+                        <h4>1 hora</h4>
                         <button class="btn btn-lg">Más información</button>
                     </div>
                 </div>
@@ -591,14 +929,27 @@ Para los paseos tendrán que pedir cita.</h4> </div>
                         <p><strong>25€/sesión</strong> Iniciación</p>
                         <p><strong>30€/sesión</strong> Doma clásica</p>
                         <p><strong>30€/sesión</strong> Hipoterapia y equitación adaptada</p>
-                        <p><strong>20€ al mes</strong> Escolares</p>
-                        <p><strong>45€/sesión</strong>Paseos</p>             
-                        <p><strong>500€ al mes</strong>Pupilaje</p>
-                        <p>*Se consideran niños, los menores hasta los 12 años</p>
+                        <p><strong>20€ al mes</strong> Escolares</p>           
                     </div>
                     <div class="panel-footer">
                          <h3>Tiempo aproximado por sesión</h3>
-                        <h4>1 hora (para paseos entre 1 a 5 horas)</h4>
+                        <h4>1 hora *Hasta los 12 años</h4>
+                        <button class="btn btn-lg">Más información</button>
+                    </div>
+                </div>
+            </div>
+                       <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Otros servicios</h1> </div>
+                    <div class="panel-body">
+                        <p><strong>500€ al mes </strong>Pupilaje</p>
+                        <p><strong>45€/sesión </strong>Paseos</p>             
+                        <p><strong></strong></p>
+                    </div>
+                    <div class="panel-footer">
+                         <h3>Tiempo aproximado por sesión</h3>
+                        <h4>Para paseos entre 1 a 5 horas</h4>
                         <button class="btn btn-lg">Más información</button>
                     </div>
                 </div>
@@ -607,7 +958,7 @@ Para los paseos tendrán que pedir cita.</h4> </div>
     </div>
 
     <!-- Sección contacto -->
-    <div id="contact" class="container-fluid bg-grey">
+    <div id="contacto" class="container-fluid bg-grey">
         <h2 class="text-center">CONTACTO</h2>
         <div class="row">
             <div class="col-sm-5">
@@ -663,32 +1014,10 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
         <a href="#myPage" title="Hacia arriba"> <span class="glyphicon glyphicon-chevron-up"></span> </a>
         <p>2017 Escuela Hípica El Álamo por <a href="#" title="Demo Escuela Hípica El Álamo">Lara García Posada</a></p>
     </footer>
-    <script>
-        $(document).ready(function () {
-            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 900, function () {
-                        window.location.hash = hash;
-                    });
-                } 
-            });
-            $(window).scroll(function () {
-                $(".slideanim").each(function () {
-                    var pos = $(this).offset().top;
-                    var winTop = $(window).scrollTop();
-                    if (pos < winTop + 600) {
-                        $(this).addClass("slide");
-                    }
-                });
-            });
-        })
-    </script>
+  
     <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_google_pie_chart grafico -->
     <!-- formulario-->
+   <!-- https://www.w3schools.com/howto/default.asp-->
 </body>
 
 </html>
