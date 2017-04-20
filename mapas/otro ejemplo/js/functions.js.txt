@@ -1,0 +1,38 @@
+function myMap(){
+    var vigo = {lat: 42.2305669737752, lng: -8.725419044494629};
+    var map = new google.maps.Map(document.getElementById('map'),{
+        zoom: 15,
+        center: vigo,
+        mapTypeId: 'satellite'
+    });
+    
+    var corteIngles = {lat: 42.232014, lng: -8.7173089};
+    var marker0 = new google.maps.Marker({
+        position: corteIngles,
+        icon: './images/logo_corteingles.png',
+        map: map
+    });
+    
+    var alcampo = {lat: 42.21980894770051, lng: -8.74510109424591};
+    var marker1 = new google.maps.Marker({
+        position: alcampo,
+        icon: './images/logo_alcampo.png',
+        map: map
+    });
+    
+    var infoCorteIngles = new google.maps.InfoWindow({
+        content: '<b>Horario</b><br>Lunes - Sábado: 10:00 a 22:00<br>Domingo <span style="color: red">Cerrado</span>'
+    });
+    
+    var infoAlcampo = new google.maps.InfoWindow({
+        content: '<b>Horario</b><br>Lunes - Sábado: 9:00 a 22:00<br>Domingo <span style="color: red">Cerrado</span>'
+    });
+    
+    google.maps.event.addListener(marker0, 'click', function(){
+       infoCorteIngles.open(map, marker0); 
+    });
+    
+    google.maps.event.addListener(marker1, 'click', function(){
+       infoAlcampo.open(map, marker1); 
+    });
+}

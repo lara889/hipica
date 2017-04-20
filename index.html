@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Escuela hípica El Álamo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+       <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+     <script type="text/javascript">
+      google.charts.load('current', {packages:["orgchart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Nombre');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+
+        data.addRows([
+          [{v:'Silvia García', f:'Silvia García<div style="color:#ffe5e5; font-style:italic">Directora general</div>'},
+           '', 'Directora general'],
+        [{v:'Lara García', f:'Lara García<div style="color:#ffe5e5; font-style:italic">Encargada de paseos</div>'},
+           'Silvia García', 'DG'], 
+     
+        [{v:'Andrea Fernández', f:'Andrea Fernández<div style="color:#ffe5e5; font-style:italic">Fisioterapeuta</div>'},
+           'Silvia García', 'DG'],
+                    [{v:'Zeltia González', f:'Zeltia González<div style="color:#ffe5e5; font-style:italic">Ayudante de fisioterapia</div>'},
+           'Andrea Fernández', ''], 
+            
+                  [{v:'Manuel Pérez', f:'Manuel Pérez<div style="color:#ffe5e5; font-style:italic">Monitor</div>'},
+           'Silvia García', 'DG'],
+    
+     [{v:'Borja López', f:'Borja López<div style="color:#ffe5e5; font-style:italic">Mantenimiento</div>'},
+           'Silvia García', 'DG']
+        ]);
+
+        // Create the chart.
+        var chart = new google.visualization.OrgChart(document.getElementById('organigrama'));
+        // Draw the chart, setting the allowHtml option to true for the tooltips.
+        data.setRowProperty(0, 'style', 'border: 1px solid black;color: black;background: #cc0000;font-size:15px;font-weight:bold');
+           data.setRowProperty(1, 'style', 'border: 1px solid black;background: #e50000;font-size:15px;font-weight:bold;color: black;'); 
+            data.setRowProperty(2, 'style', 'border: 1px solid black;background: #e50000;font-size:15px;font-weight:bold;color: black;');  
+          
+           data.setRowProperty(3, 'style', 'border: 1px solid black;background: #ff0000;font-size:15px;font-weight:bold;color: black;');
+          
+   data.setRowProperty(4, 'style', 'border: 1px solid black;background: #e50000;font-size:15px;font-weight:bold;color: black;');
+          data.setRowProperty(5, 'style', 'border: 1px solid black;background: #e50000;font-size:15px;font-weight:bold;color: black;');        
+
+        chart.draw(data, {allowHtml:true});
+      }
+   </script>
+    <style>
+         .google-visualization-orgchart-linebottom{
+           border-bottom: 2px solid black!important;
+       }
+       .google-visualization-orgchart-lineleft{
+           border-left: 2px solid black!important;
+       }
+       .google-visualization-orgchart-lineright{
+           border-right: 2px solid black!important;
+       }
+        
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+        
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        .jumbotron {
+            background-color: red;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+        
+        .container-fluid {
+            padding: 60px 50px;
+        }
+        
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+        
+        .logo-small {
+            color: red;
+            font-size: 50px;
+        }
+        
+        .logo {
+            color: red;
+            font-size: 200px;
+        }
+        
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .carousel-control.right,
+        .carousel-control.left {
+            background-image: none;
+            color: red;
+        }
+        
+        .carousel-indicators li {
+            border-color: red;
+        }
+        
+        .carousel-indicators li.active {
+            background-color: red;
+        }
+        
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+        
+        .item span {
+            font-style: normal;
+        }
+        
+        .panel {
+            border: 1px solid red;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+        
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+        }
+        
+        .panel-footer .btn:hover {
+            border: 1px solid red;
+            background-color: #fff !important;
+            color: red;
+        }
+        
+        .panel-heading {
+            color: #fff !important;
+            background-color: red !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        
+        .panel-footer {
+            background-color: white !important;
+        }
+        
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+        
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .panel-footer .btn {
+            margin: 15px 0;
+            background-color: red;
+            color: #fff;
+        }
+        
+        .navbar {
+            margin-bottom: 0;
+            background-color: red;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+        
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+        
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: red !important;
+            background-color: #fff !important;
+        }
+        
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+        
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: red;
+        }
+        
+        .slideanim {
+            visibility: hidden;
+        }
+        
+        .slide {
+            animation-name: slide;
+            animation-duration: 1s;
+            visibility: visible;
+        }
+        
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
+        
+        
+        	#mc_embed_signup{
+                background:#fff; 
+                clear:left; 
+                font:14px Helvetica,Arial,sans-serif; 
+                width:100%;
+        } 
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="#myPage"><img src="/Empresa%2520hipica/IMAGENES/logo.png"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#sobreNosotros">Sobre nosotros</a></li>    <li><a href="#objetivos">Nuestros valores</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#instalaciones">Instalaciones</a></li>
+                    <li><a href="#horarios">Horario</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron text-center">
+        <h1>Escuela hípica El Álamo</h1>
+        <p>Ofrecemos un servicio personalizado a personas con discapacidad que necesitan desarrollarse para potenciar su vida diaria y alcanzar una mayor autonomía personal</p>
+        <form>
+            <div class="input-group">
+                <input type="email" class="form-control" size="50" placeholder="Correo electrónico" required>
+                 <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Suscríbete</button>
+                <!-- http://kb.mailchimp.com/es/lists/signup-forms/add-a-signup-form-to-your-website-->
+                               
+            </div>
+            </div>
+        </form> 
+           <br>     
+               <!-- vision escuela hipica-->
+                <!-- https://us15.admin.mailchimp.com/lists/integration/embeddedcode?id=84597 -->
+                <!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="//esy.us15.list-manage.com/subscribe/post?u=909e3beaf5265df3a421e62a1&amp;id=96c9ffb844" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll" class="input-group" >
+	<label for="mce-EMAIL">Suscríbete a nuestro boletín de noticias</label>
+	<input class="form-control" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Correo electrónico" required>
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_909e3beaf5265df3a421e62a1_96c9ffb844" tabindex="-1" value=""></div>
+    <div class="clear input-group-btn"><input class="button btn btn-danger" type="submit" value="Suscríbete" name="subscribe" id="mc-embedded-subscribe"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+               
+               
+               
+
+    </div>
+    <!-- Sección quienes somos -->
+    <div id="sobreNosotros" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <!-- Slide: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto -->
+                <h2>¿Quienes somos?</h2>
+                <br>
+                <h4>Nuestra escuela de hípica para personas discapacitadas nos proporciona gran ilusión y satisfacción a los cuatro socios que integramos la empresa, ya que somos unos grandes aficionados a la equitación y siempre ponemos todo nuestro empeño y tesón para que este proyecto siga adelante.</h4>
+                <p>Somos empresarios emprendedores que antes pasar a la acción y crear la empresa realizamos un proceso de análisis, reflexión, búsqueda de información… y este análisis previo nos llevó a la conclusión de que nuestra idea de negocio es rentable y nos permite obtener beneficios, ofreciendo un gran servicio de calidad y lo que es más importante, disfrutar haciéndolo.</p>
+                <p>A pesar de que fue complicado al principio debido al gran desembolso inicial que tuvimos que realizar, durante el proceso desarrollamos estrategias, ideas y objetivos para poder llevarlo a cabo y así satisfacer a ese mercado potencial. </p>
+                <h4>Organigrama</h4>
+                <p> <strong>Socios fundadores: </strong> <br>Silvia García<br>Lara García<br>Zeltia González<br>Borja López</p><br>
+                 <div id="organigrama"></div>
+    <!-- https://developers.google.com/chart/interactive/docs/gallery/orgchart#example -->
+                 <!-- insertar organigrama-->
+                 
+                  <img src="Empresa%2520hipica/IMAGENES/dafo.png">
+                <!-- hacer 4 divs, 2 div 2 div
+     http://dafo.ipyme.org/SitePagesDAFO/MatrizDAFO.aspx-->
+                <div class="col-sm-4"> </div>
+                <div class="col-sm-4"> </div>
+                <div class="col-sm-4"> </div>
+                <div class="col-sm-4"> </div>
+                <h4>Nuestro nombre</h4>
+                <p>El nombre de nuestra empresa es <strong>Escuela hípica El Álamo</strong>. Nos decantamos por este nombre de árbol en particular porque pensamos que representa los valores de nuestra empresa. El álamo es el árbol figurativo de la rectitud, y así es como llevamos nuestro proyecto, con paso firme hacia el crecimiento y consolidación. </p>
+
+            </div>
+            <div class="col-sm-4"> <span class="glyphicon glyphicon-signal logo"></span> </div>
+        </div>
+    </div>
+    <div id="objetivos" class="container-fluid bg-grey">
+        <div class="row">
+            <div class="col-sm-4"> <span class="glyphicon glyphicon-globe logo slideanim"></span> </div>
+            <div class="col-sm-8">
+                <h2>Nuestros valores</h2>
+                <br>
+                <h4><strong>Objetivos: </strong><br></h4>
+                
+                <ul>
+<li type="square">Satisfacer las necesidades de nuestros clientes.</li>
+<li type="square">Promover la práctica de la hipoterapia en Galicia.</li><li type="square">Prestar un buen servicio a la sociedad.</li>
+<li type="square">Que los trabajadores se sientan integrados dentro de la empresa, formando un  grupo de trabajo agradable tanto para los clientes como al propio personal de la escuela.</li>
+</ul><br>
+               
+                <h4><strong class="text-center">MISION: </strong><br></h4>
+                <p><strong>Escuela hípica El Álamo tiene como fines la atención de personas con discapacidad, ofreciendo el mejor servicio personalizado del mercado en el mundo de la hípica.</strong>
+                    <br>
+                    <br> Nuestra principal diferencia es la variedad de servicios que ofrecemos, entre los que se encuentran la hipoterapia y equitación adaptada, y la atención personalizada que ofrecemos a cada cliente. Nuestra finalidad, es el bienestar de las personas, ofreciéndoles siempre el mejor equipo humano acompañado de las mejores instalaciones.
+                    <br>
+                    <br> Entre todas las escuelas de hípica, destacamos por nuestras actividades y nuestra experiencia en mejorar las condiciones de vida de personas con diversidad funcional, en las que se utilizan terapias relacionadas con el trato con los caballos. Todo esto hace que nuestros clientes queden plenamente satisfechos y tengamos el placer de recibirlos en la Escuela hípica El Álamo </p><br>
+                    <h4><strong>VISION: </strong><br></h4>
+                <p> <strong>Ser un referente dentro de los centros de hípica de nuestra localidad y en la localidad vecina, con unos precios asequibles y con la mejor calidad. En breve participaremos en competiciones de Horseball.</strong></p><br>
+                <h4><strong>VALORES: </strong></h4>
+                <p> Profesionalidad, Constancia, Cercanía, Emprendimiento, Innovación</p>
+            </div>
+        </div>
+    </div>
+    <!-- Container (Services Section) -->
+    <div id="servicios" class="container-fluid text-center">
+        <h2>SERVICIOS</h2>
+        <h4>Nuestras actividades</h4>
+        <br>
+        <div class="row slideanim">
+            <div class="col-sm-4"> <span class="glyphicon glyphicon-off logo-small"></span>
+                <h4>INICIACION </h4>
+                <p>Organizamos cursos de iniciación a la Terapia Asistida con Caballos</p>
+            </div>
+
+            <div class="col-sm-4"> <span class="glyphicon glyphicon-lock logo-small"></span>
+                <h4>HIPOTERAPIA</h4>
+                <p>Actividad terapéutica utilizada para la rehabilitación de pacientes con enfermedades neurodegenerativas y traumatológicas, entre otras patologías, a través del paso tranquilo  del caballo.<br>
+Trata otras patologías tan severas como Síndrome de Down, parálisis cerebral, autismo, problemas de lenguaje  e incluso epilepsia pueden ser curadas gracias a la hipoterapia. Esta técnica aprovecha los movimientos de los equinos para estimular los músculos y articulaciones del paciente, estos movimientos simulan una marcha fisiológica, lo más parecida a la humana, lo que trae inmensos beneficios para los pacientes.</p>                <br>
+                <button class="btn btn-default btn-lg">Más información</button>
+                <!-- 
+                
+                ¿Cómo se imparte la hipoterapia?
+El paciente es colocado en varias posiciones encima del caballo con el fin de aprovechar al máximo el movimiento oscilante del animal, en el caso de un niño que está en silla de ruedas, este se sube al caballo y, todo el movimiento que efectúa desde la pelvis hacia arriba es como nosotros lo hacemos cuando caminamos. Para llevar a cabo estos estímulos, la fisioterapeuta realiza diversos ejercicios al paciente, mientras este permanece montado, la idea es que el paciente responda a los movimientos y se logre cierta coordinación y equilibrio.
+Respecto al tipo de ejercicios, es oportuno advertir que en ellas jamás se le enseñará al paciente destrezas de equitación sino más bien apretar, relajar ciertos músculos o hacer algún tipo de actividades sobre el equino
+
+¿Qué tipos de enfermedades se pueden tratar y a qué edad?
+La hipoterapia no sólo se limita a enfermedades físicas sino también a las psicológicas como fobias, temores y estrés, entre otros. Su aplicación no tiene límites de edad, ya que puede ser practicada por niños desde dos años con parálisis cerebral hasta en adultos que padezcan de Alzheimer. El tratamiento es absolutamente individual y se ajusta a la necesidad y evolución de cada paciente.
+
+¿No es peligroso utilizar caballos para estos fines?
+Los caballos utilizados con fines terapéuticos deben de ser animales adultos, saludables, bien mansos y sobre todo que no participen en ningún otro tipo de actividad.
+Además hay que entrenarlos antes de que monten con niños para que estén cansados -->
+            </div>            
+               <div class="col-sm-4"> <span class="glyphicon glyphicon-lock logo-small"></span>
+                <h4>EQUITACION ADAPTADA</h4>
+                <p>Está pensada para personas con discapacidades físicas o sensoriales, va dirigida a aquellos  que tienen o pueden llegar a tener un buen nivel de equitación, pero necesitan adaptaciones para el material. La actividad que nosotros ofrecemos es la doma clásica.</p>
+            </div>  
+         <div class="col-sm-4"> <span class="glyphicon glyphicon-heart logo-small"></span>
+                <h4>DOMA CLASICA</h4>
+                <p>Consiste en el adiestramiento por medio del cual el jinete consigue que su caballo realice todas sus órdenes con un alto grado de armonía. Requiere muchas horas de entrenamiento, cuyo objetivo final es el de mejorar el físico y los aires naturales del caballo para tratar que sus movimientos se muestren mucho más bellos.<br>
+Con la doma clásica se busca un equilibrio total entre jinete y caballo, logrando un total entendimiento y comprensión entre ellos, y unos movimientos puros y bellos.</p>
+            </div>             
+               <div class="col-sm-4"> <span class="glyphicon glyphicon-leaf logo-small"></span>
+                <h4>PASEOS</h4>
+                <p>En esta actividad se ofrecen varios recorridos, también se da la posibilidad a personas que tenga experiencia montando a caballo que ellos realicen sus propios recorridos sin la supervisión de ningún profesor.<br>
+Se realizaran paseos por grupos, con previos aviso para poder disponer de los caballos. La duración de cada paseo será de aproximadamente 1 hora para las rutas preparadas, y siempre irán acompañados de un monitor. En caso de rutas libres, no irá ningún monitor, pero se les marcaran unos límites territoriales de los cuales no podrán rebasar.<br>
+¡Realizamos las más exclusivas rutas a caballo en Sanxenxo!<br>
+           Tienes la posibilidad de cabalgar en el propio picadero o realizar una ruta por el bosque. Si lo deseas puedes combinar ambas posibilidades, galopando previamente en el picadero, donde recibirás los conocimientos necesarios para realizar posteriormente una ruta guiada por el bosque.
+           </p>
+             <br>
+                <button class="btn btn-default btn-lg">Más información</button>
+                
+            </div>             
+                 <div class="col-sm-4"> <span class="glyphicon glyphicon-certificate logo-small"></span>
+                <h4>SERVICIO DE PUPILAJE</h4>
+                <p>En este servicios ofrecemos a nuestros clientes la posibilidad de hacernos cargo de su caballo, tanto de higiene alimentación como de cuidados médicos sin son necesarios.<br>
+Cada equino tendrá su propio bóxer, dotado de los mejores servicios. Tenemos unas tarifas estipuladas por mes, pero también ofrecemos la posibilidad, si deponemos de boxes libres, de alojamientos puntuales. Por ejemplo si una semana o unos días no puede hacerse cargo de los cuidados del caballo, nosotros se lo cuidaremos.<br>
+Disponemos de una persona que se encargara del cuidado de cada caballo y además también los sacara de la cuadra diariamente para que estos realicen un poco de ejercicio.</p>
+            </div>
+        </div>
+        <br>
+    </div>
+    <!-- Sección instalaciones -->
+    <div id="instalaciones" class="container-fluid text-center bg-grey">
+        <h2>Instalaciones</h2>
+        <br>
+        <h4>Nuestra escuela cuenta con las siguientes instalaciones:</h4>
+        <div class="row text-center slideanim">
+            <div class="col-sm-4">
+                <div class="thumbnail"> <img src="cubierta.jpg" alt="Pista cubierta" width="400" height="300">
+                    <p><strong>PiSTA CUBIERTA (15X25) 375m₂</strong></p>
+                    <p>Necesaria para los días de lluvia o excesivo calor.</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail"> <img src="libre.jpg" alt="Pista al aire libre" width="400" height="300">
+                    <p><strong>PISTA AL AIRE LIBRE (20X35) 700 m₂</strong></p>
+                    <p>Texto</p>
+                </div>
+            </div>       
+                 <div class="col-sm-4">
+                <div class="thumbnail"> <img src="boxes.jpg" alt="Boxes" width="400" height="300">
+                    <p><strong>BOXES (4X5) 20 m₂ </strong></p>
+                    <p>Disponemos de 15 boxes, diez para caballos propios y otros cinco para los caballos de los clientes que estarán bajo nuestro servicio de pupilaje. </p>
+                </div>
+            </div>              
+                  <div class="col-sm-4">
+                <div class="thumbnail"> <img src="recepcion.jpg" alt="Recepción y sala de estar" width="400" height="300">
+                    <p><strong>RECEPCION Y SALA DE ESTAR (5X5) 25 m₂</strong></p>
+                    <p>Esta zona cuenta con una recepción y una sala de estar a disposición de los clientes o acompañantes de los mismos. Además tenemos baños adaptados para personas con discapacidad.</p>
+                </div>
+            </div>         
+                        <div class="col-sm-4">
+                <div class="thumbnail"> <img src="entrada.jpg" alt="Entrada" width="400" height="300">
+                    <p><strong>ENTRADA 8m DE ANCHO </strong></p>
+                    <p>Consideramos que la entrada debe ser ancha, para facilitar el acceso a los autobuses de las actividades extraescolares que ofrecemos y para los remolques de los caballos.</p>
+                </div>
+            </div>      
+                                 <div class="col-sm-4">
+                <div class="thumbnail"> <img src="aparcamiento.jpg" alt="Aparcamientos" width="400" height="300">
+                    <p><strong>APARCAMIENTOS (4x6) 24 m₂ </strong></p>
+                    <p>Están pavimentados, también son anchos y grandes ya que tiene que estar adaptados para minusválidos al igual que el resto de las instalaciones.</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2>Comentarios de nuestros clientes</h2>
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicadores -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Contenido -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <h4>"Sin duda la mejor empresa de hípica. El trato siempre ha sido muy cercano. Siempre que he tenido que consultar cualquier cosa me han resuelto mis dudas y me han atendido exquisitamente. Desde aquí deseo agradecer el buen trato que me han dado siempre."<br><span>Ruben</span></h4> </div>
+                <div class="item">
+                    <h4>"Me gusta el servicio de atención personalizado que he tenido en la escuela hípica El Álamo"<br><span>Susana</span></h4> </div>
+                <div class="item">
+                    <h4>"Comentario"<br><span>Nombre</span></h4> </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Anterior</span> </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Siguiente</span> </a>
+        </div>
+    </div>
+    <!-- Sección Horario -->
+    <div id="horarios" class="container-fluid">
+        <div class="text-center">
+            <h2>Horario</h2>
+            <h4>Nuestro horario  será de 9-13.30 y de 15.30 a 20 h <br>
+Para los paseos tendrán que pedir cita.</h4> </div>
+       
+       
+       <!-- insertar tabla con horarios, USAR JQUERY!!!-->
+               <table>
+<tr>
+  <td><strong>Horario</strong></td>
+  <td><strong>Lunes</strong></td>
+  <td><strong>Martes</strong></td>  
+  <td><strong>Miércoles</strong></td>  
+  <td><strong>Jueves</strong></td>  
+  <td><strong>Viernes</strong></td>  
+  <td><strong>Sábado</strong></td>
+</tr>
+ 
+<tr>
+  <td>9:00 - 13:30</td>
+  <td>Equitación adaptada e hipoterapia</td>
+  <td>Equitación adaptada e hipoterapia</td>  
+  <td>Iniciación y doma clásica</td>
+  <td>Equitación adaptada e hipoterapia</td>  
+  <td>Equitación adaptada e hipoterapia</td>
+  <td>Iniciación y doma clásica</td>
+</tr>
+ 
+<tr>
+  <td>15:30 - 20:30</td>
+  <td>Iniciación y doma clásica</td>
+  <td>Escolares</td>  
+  <td>Equitación adaptada e hipoterapia</td>
+  <td>Escolares</td>  
+  <td>Iniciación y doma clásica</td>
+  <td>Equitación adaptada e hipoterapia</td>
+</tr>
+ <br>
+</table>
+                
+               <p>*Tenemos un horario flexible y nos adaptamos a nuestro clientes, con lo que le ofrecemos, previo aviso de dos días, la posibilidad de realizar las actividades fuera de su horario habitual, aunque siempre cumpliendo las horas de apertura y cierre de las instalaciones.</p> 
+                
+                     <div class="text-center">
+                 <h2>Precios</h2>
+            <h4>Nuestro horario  es de 9-13.30 y de 15.30 a 20 h <br>
+                Para los paseos tendrán que pedir cita.</h4> </div>
+        <div class="row slideanim">
+            <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Adultos</h1> </div>
+                    <div class="panel-body">
+                        <p><strong>35€/sesión</strong> Iniciación</p>
+                        <p><strong>40€/sesión</strong> Doma clásica</p>
+                        <p><strong>40€/sesión</strong> Hipoterapia y equitación adaptada</p>
+                        <p><strong>20€ al mes</strong> Escolares</p>
+                        <p><strong>45€/sesión</strong>Paseos</p>             
+                        <p><strong>500€ al mes</strong>Pupilaje</p>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>Tiempo aproximado por sesión</h3>
+                        <h4>1 hora (para los paseos es entre 1 a 5 horas)</h4>
+                        <button class="btn btn-lg">Más información</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Niños</h1> </div>
+                    <div class="panel-body">
+                        <p><strong>25€/sesión</strong> Iniciación</p>
+                        <p><strong>30€/sesión</strong> Doma clásica</p>
+                        <p><strong>30€/sesión</strong> Hipoterapia y equitación adaptada</p>
+                        <p><strong>20€ al mes</strong> Escolares</p>
+                        <p><strong>45€/sesión</strong>Paseos</p>             
+                        <p><strong>500€ al mes</strong>Pupilaje</p>
+                        <p>*Se consideran niños, los menores hasta los 12 años</p>
+                    </div>
+                    <div class="panel-footer">
+                         <h3>Tiempo aproximado por sesión</h3>
+                        <h4>1 hora (para paseos entre 1 a 5 horas)</h4>
+                        <button class="btn btn-lg">Más información</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección contacto -->
+    <div id="contact" class="container-fluid bg-grey">
+        <h2 class="text-center">CONTACTO</h2>
+        <div class="row">
+            <div class="col-sm-5">
+                <p>Nuestra escuela está situada en Sanxenxo (Pontevedra), en la zona de Bordóns.
+                   <!-- https://elpla.net/-->
+                    <br>  Nuestras instalaciones estan situadas en la Calle Outeiro nº25 y dispone de 3500m2 distribuidos en una sola parcela. El local tiene una buena facilidad de acceso y buena visibilidad. Gracias a las buenas infraestructuras de esta zona, nuestro local está bien comunicado con el centro de Sanxenxo además de con otros puntos de la provincia de Pontevedra, como las localidades vecinas.</p>
+                <p>Puedes enviarnos un mensaje y te responderemos tan pronto como sea posible.</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Calle Outeiro, nº 25</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +34 699.999.999</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> infohipicaelalamo@gmail.com</p>
+            </div>
+            <div class="col-sm-7 slideanim">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Nombre" type="text" required> </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required> </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comentarios" rows="5"></textarea>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google Maps -->
+    <div id="googleMap" style="height:400px;width:100%;"></div>
+    <script>
+        function myMap() {
+            var myCenter = new google.maps.LatLng(42.4047613, -8.7555661);
+            var mapProp = {
+                center: myCenter
+                , zoom: 12
+                , scrollwheel: false
+                , draggable: false
+                , mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: myCenter
+            });
+            marker.setMap(map);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+    <!--
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="Hacia arriba"> <span class="glyphicon glyphicon-chevron-up"></span> </a>
+        <p>2017 Escuela Hípica El Álamo por <a href="#" title="Demo Escuela Hípica El Álamo">Lara García Posada</a></p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    // Store hash
+                    var hash = this.hash;
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+    <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_google_pie_chart grafico -->
+    <!-- formulario-->
+</body>
+
+</html>
